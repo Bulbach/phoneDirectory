@@ -1,0 +1,15 @@
+com\alex\model\Human.class
+com\alex\controllers\PhoneController.class
+com\alex\AlexApplication.class
+com\alex\dto\HumanDto.class
+com\alex\model\Phone.class
+com\alex\repository\PhoneDaoImpl.class
+com\alex\config\SwaggerConfig.class
+com\alex\service\PhoneService.class
+com\alex\mappers\PhoneMapper.class
+com\alex\controllers\HumanController.class
+com\alex\repository\HumanDaoImpl.class
+com\alex\config\MyConfiguration.class
+com\alex\dto\PhoneDto.class
+com\alex\mappers\HumanMapper.class
+com\alex\service\HumanService.class
