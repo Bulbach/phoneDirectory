@@ -7,14 +7,6 @@ public class PhoneDto {
 
     private HumanDto humanDto;
 
-    public PhoneDto() {
-    }
-
-    public PhoneDto(String phoneNumber, HumanDto humanDto) {
-        this.phoneNumber = phoneNumber;
-        this.humanDto = humanDto;
-    }
-
     public Long getId() {
         return id;
     }

@@ -11,9 +11,6 @@ public class HumanDto {
     private String street;
     private String birthday;
 
-    public HumanDto() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -29,8 +26,6 @@ public class HumanDto {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-
-
 
     public String getFirstname() {
         return firstname;
