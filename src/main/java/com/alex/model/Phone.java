@@ -1,10 +1,10 @@
 package com.alex.model;
 
 
-import org.springframework.stereotype.Component;
+
 
 import javax.persistence.*;
-@Component
+
 @Entity
 @Table(name = "phones")
 public class Phone {

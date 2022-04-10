@@ -31,11 +31,6 @@ public class HumanService {
         return humanMapper.toDto(humanDao.save(human1));
     }
 
-    public HumanDto updateHuman(HumanDto human) {
-        Human humanDaoById = humanDao.getById(human.getId());
-
-        return humanMapper.updateModel(human,humanDaoById);
-    }
 
     public void delete(Long id){
         humanDao.deleteById(id);

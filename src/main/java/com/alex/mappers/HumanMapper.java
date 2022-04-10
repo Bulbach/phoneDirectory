@@ -8,14 +8,8 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Component;
 
 @Mapper
-@Component
 public interface HumanMapper {
 
-    HumanMapper INSTANCE = Mappers.getMapper(HumanMapper.class);
-
     HumanDto toDto(Human human);
-
     Human toModel(HumanDto humanDto);
-
-    HumanDto updateModel(HumanDto humanDto, @MappingTarget Human human);
 }

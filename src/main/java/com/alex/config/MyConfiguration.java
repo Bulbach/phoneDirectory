@@ -9,27 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-//@ComponentScan("com.alex")
 @EnableJpaRepositories
 public class MyConfiguration {
 
-    @Bean
-    public Human humanBean(){
-        return new Human();
-    }
-
-    @Bean
-    public Phone phoneBean(){
-        return new Phone();
-    }
-    @Bean
-    public HumanDto humanDtoBean(){
-        return new HumanDto();
-    }
-    @Bean
-    public PhoneDto phoneDtoBean(){
-        return new PhoneDto();
-    }
+    //todo читать про способы внедрения зависимостей
 //    @Bean
 //    public HumanMapper humanMapperBean(){
 //        return new HumanMapper();

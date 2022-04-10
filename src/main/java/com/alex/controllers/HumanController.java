@@ -34,10 +34,11 @@ public class HumanController {
         return humanService.createHuman(humanDto);
     }
 
+    //todo тоже самое переделать
     @PostMapping("/update")
     @ApiOperation("изменение сущности")
     public HumanDto updateHuman(@RequestBody HumanDto humanDto) {
-        return humanService.updateHuman(humanDto);
+        return null;
     }
 
     @GetMapping("/get/{id}")

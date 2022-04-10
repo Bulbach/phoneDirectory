@@ -13,7 +13,7 @@ public class PhoneController {
 
     private final PhoneService phoneService;
 
-    public PhoneController(@Autowired PhoneService phoneService) {
+    public PhoneController(PhoneService phoneService) {
         this.phoneService = phoneService;
     }
 
@@ -22,10 +22,12 @@ public class PhoneController {
         return phoneService.createPhone(phoneDto);
     }
 
+    //todo переделать дичь лютая была
     @PostMapping("/update")
     public PhoneDto updatePhone(@RequestBody PhoneDto phoneDto) {
-        return phoneService.updatePhone(phoneDto);
+        return null;
     }
+
     @GetMapping("/get/{id}")
     public PhoneDto getById(@PathVariable("id") Long id){
         return phoneService.getById(id);

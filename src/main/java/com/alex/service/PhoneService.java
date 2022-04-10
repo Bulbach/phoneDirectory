@@ -30,12 +30,6 @@ public class PhoneService {
         return phoneMapper.toDto(phoneDao.save(phone1));
     }
 
-    public PhoneDto updatePhone(PhoneDto phone) {
-        Phone phoneDaoById = phoneDao.getById(phone.getId());
-
-        return  phoneMapper.updateModel(phone,phoneDaoById);
-    }
-
     public void delete(Long id){
         phoneDao.deleteById(id);
     }
