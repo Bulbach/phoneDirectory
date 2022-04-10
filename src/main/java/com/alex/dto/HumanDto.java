@@ -1,7 +1,11 @@
 package com.alex.dto;
 
-import java.util.List;
+import com.alex.mappers.HumanMapper;
+import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
 public class HumanDto {
 
     private Long id;

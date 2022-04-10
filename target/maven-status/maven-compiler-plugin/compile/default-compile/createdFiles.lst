@@ -11,5 +11,6 @@ com\alex\controllers\HumanController.class
 com\alex\repository\HumanDaoImpl.class
 com\alex\config\MyConfiguration.class
 com\alex\dto\PhoneDto.class
+com\alex\config\DbConfiguration.class
 com\alex\mappers\HumanMapper.class
 com\alex\service\HumanService.class

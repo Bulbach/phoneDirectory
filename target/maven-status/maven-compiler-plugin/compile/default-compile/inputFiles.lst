@@ -8,8 +8,10 @@ D:\progectWithDima\src\main\java\com\alex\model\Phone.java
 D:\progectWithDima\src\main\java\com\alex\dto\HumanDto.java
 D:\progectWithDima\src\main\java\com\alex\mappers\HumanMapper.java
 D:\progectWithDima\src\main\java\com\alex\service\HumanService.java
+D:\progectWithDima\src\main\java\com\alex\config\DbConfiguration.java
 D:\progectWithDima\src\main\java\com\alex\config\SwaggerConfig.java
 D:\progectWithDima\src\main\java\com\alex\AlexApplication.java
+D:\progectWithDima\src\main\java\com\alex\mappers\HumanMapperImpl.java
 D:\progectWithDima\src\main\java\com\alex\service\PhoneService.java
 D:\progectWithDima\src\main\java\com\alex\dto\PhoneDto.java
 D:\progectWithDima\src\main\java\com\alex\mappers\PhoneMapper.java
