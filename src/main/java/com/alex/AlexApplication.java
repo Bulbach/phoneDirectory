@@ -14,9 +14,10 @@ public class AlexApplication {
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext
                 (MyConfiguration.class, SwaggerConfig.class, DbConfiguration.class);
-      for (String item : ctx.getBeanDefinitionNames()){
-          System.out.println(item);
-      }
+//      for (String item : ctx.getBeanDefinitionNames()){
+//          System.out.println(item);
+//      }
+
 
     }
 }

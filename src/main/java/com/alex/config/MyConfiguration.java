@@ -9,11 +9,13 @@ import com.alex.mappers.PhoneMapperImpl;
 import com.alex.service.HumanService;
 import com.alex.service.PhoneService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaRepositories
+@ComponentScan
 public class MyConfiguration {
 
     //todo читать про способы внедрения зависимостей
