@@ -2,7 +2,6 @@ package com.alex.controllers;
 
 import com.alex.dto.PhoneDto;
 import com.alex.service.PhoneService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,10 +10,10 @@ import java.util.List;
 @RequestMapping("/phone")
 public class PhoneController {
 
-    private final PhoneService phoneService;
+    private final PhoneService phoneService = getPhoneService();
 
-    public PhoneController(PhoneService phoneService) {
-        this.phoneService = phoneService;
+    public PhoneService getPhoneService() {
+        return phoneService;
     }
 
     @PostMapping("/add")

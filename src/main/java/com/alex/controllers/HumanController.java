@@ -4,7 +4,6 @@ import com.alex.dto.HumanDto;
 import com.alex.service.HumanService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,10 +13,10 @@ import java.util.List;
 @RequestMapping("/human")
 @Api("Контроллер для работы с классом Human")
 public class HumanController {
-    private final HumanService humanService;
+    private final HumanService humanService = getHumanService();
 
-    public HumanController(@Autowired HumanService humanService) {
-        this.humanService = humanService;
+    public HumanService getHumanService() {
+        return humanService;
     }
 
     @RequestMapping("/basic")

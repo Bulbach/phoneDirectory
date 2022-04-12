@@ -4,7 +4,6 @@ import com.alex.dto.HumanDto;
 import com.alex.mappers.HumanMapper;
 import com.alex.model.Human;
 import com.alex.repository.HumanDaoImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,12 +11,17 @@ import java.util.stream.Collectors;
 
 @Service
 public class HumanService {
-    private final HumanDaoImpl humanDao;
-    private final HumanMapper humanMapper;
+    private final HumanDaoImpl humanDao = getHumanDao();
+    private final HumanMapper humanMapper = getHumanMapper();
 
-    public HumanService(@Autowired HumanDaoImpl humanDao,@Autowired HumanMapper humanMapper) {
-        this.humanDao = humanDao;
-        this.humanMapper = humanMapper;
+
+
+    public HumanDaoImpl getHumanDao() {
+        return humanDao;
+    }
+
+    public HumanMapper getHumanMapper() {
+        return humanMapper;
     }
 
     public HumanDto getById(Long id) {
