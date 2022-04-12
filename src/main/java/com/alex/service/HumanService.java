@@ -15,7 +15,6 @@ public class HumanService {
     private final HumanMapper humanMapper = getHumanMapper();
 
 
-
     public HumanDaoImpl getHumanDao() {
         return humanDao;
     }
@@ -36,22 +35,30 @@ public class HumanService {
     }
 
 
-    public void delete(Long id){
+    public void delete(Long id) {
         humanDao.deleteById(id);
     }
 
-    public List<HumanDto> getAll(){
+    public List<HumanDto> getAll() {
         return humanDao.findAll()
                 .stream()
                 .map(humanMapper::toDto)
                 .collect(Collectors.toList());
     }
 
-    public void saveAll(List<HumanDto> humanDtoList){
+    public void saveAll(List<HumanDto> humanDtoList) {
         List<Human> humanList = humanDtoList.stream()
                 .map(humanMapper::toModel)
                 .collect(Collectors.toList());
         humanDao.saveAll(humanList);
+    }
+
+    public HumanDto updateHuman(HumanDto humanDto) {
+        Human humanById = humanDao.getById(humanDto.getId());
+        humanMapper.updateHumanFromDto(humanDto, humanById);
+
+        return humanMapper.toDto(humanDao.save(humanById));
+
     }
 }
 /*

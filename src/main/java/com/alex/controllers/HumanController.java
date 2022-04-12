@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping("/human")
+@RequestMapping("/humans")
 @Api("Контроллер для работы с классом Human")
 public class HumanController {
     private final HumanService humanService = getHumanService();
@@ -27,7 +27,8 @@ public class HumanController {
         mav.addObject("listHuman", listHuman);
         return mav;
     }
-    @PostMapping("/add")
+
+    @PostMapping("/human")
     @ApiOperation("добавление новой сущности")
     public HumanDto createHuman(@RequestBody HumanDto humanDto) {
         return humanService.createHuman(humanDto);
@@ -37,7 +38,7 @@ public class HumanController {
     @PostMapping("/update")
     @ApiOperation("изменение сущности")
     public HumanDto updateHuman(@RequestBody HumanDto humanDto) {
-        return null;
+        return humanService.updateHuman(humanDto);
     }
 
     @GetMapping("/get/{id}")
@@ -46,7 +47,7 @@ public class HumanController {
         return humanService.getById(id);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/")
     @ApiOperation("полный список сущностей")
     public List<HumanDto> getAll() {
         return humanService.getAll();
@@ -54,7 +55,7 @@ public class HumanController {
 
     @DeleteMapping("/delete/{id}")
     @ApiOperation("удаление сущьности")
-    public void deleteHuman(@PathVariable Long id) {
+    public void deleteHuman(@RequestParam(value = "id") Long id) {
         humanService.delete(id);
     }
 }
