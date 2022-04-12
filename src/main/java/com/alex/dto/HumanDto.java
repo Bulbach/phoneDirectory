@@ -1,14 +1,21 @@
 package com.alex.dto;
 
+import org.springframework.stereotype.Component;
 
-
+import java.util.List;
+@Component
 public class HumanDto {
 
     private Long id;
+
     private String lastname; // Фамилия
     private String firstname;
     private String city;
     private String street;
+
+
+    private List<PhoneDto> phoneDtoList;
+
     private String birthday;
 
     public Long getId() {
@@ -25,6 +32,9 @@ public class HumanDto {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+    public List<PhoneDto> getPhoneDtoList() {
+        return phoneDtoList;
     }
 
     public String getFirstname() {
@@ -51,6 +61,9 @@ public class HumanDto {
         this.street = street;
     }
 
+    public void setPhoneDtoList(List<PhoneDto> phoneDtoList) {
+        this.phoneDtoList = phoneDtoList;
+    }
 
     public String getBirthday() {
         return birthday;
