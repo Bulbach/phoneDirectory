@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity(name = "human")
@@ -28,7 +28,7 @@ public class Human {
     private List<Phone> phones;
     @Column
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date birthday;
+    private LocalDate birthday;
     {
         phones = new ArrayList<>();
     }
@@ -57,14 +57,13 @@ public class Human {
         this.firstname = firstname;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-
 
     public String getBithdayValue() {
         return this.birthday != null ? DATE_FORMAT.format(this.birthday) : "";
