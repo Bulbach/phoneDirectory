@@ -4,7 +4,6 @@ import com.alex.dto.PhoneDto;
 import com.alex.mappers.PhoneMapper;
 import com.alex.model.Phone;
 import com.alex.repository.PhoneDaoImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,13 +11,18 @@ import java.util.stream.Collectors;
 
 @Service
 public class PhoneService {
-    private final PhoneDaoImpl phoneDao;
-    private final PhoneMapper phoneMapper;
+    private final PhoneDaoImpl phoneDao = getPhoneDao();
+    private final PhoneMapper phoneMapper = getPhoneMapper();
 
-    public PhoneService(@Autowired PhoneDaoImpl phoneDao,@Autowired PhoneMapper phoneMapper) {
-        this.phoneDao = phoneDao;
-        this.phoneMapper = phoneMapper;
+
+    public PhoneDaoImpl getPhoneDao() {
+        return phoneDao;
     }
+
+    public PhoneMapper getPhoneMapper() {
+        return phoneMapper;
+    }
+
     public PhoneDto getById(Long id) {
 
         return phoneMapper.toDto(phoneDao.getById(id));

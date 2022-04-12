@@ -4,7 +4,7 @@ import com.alex.config.DbConfiguration;
 import com.alex.config.MyConfiguration;
 import com.alex.config.SwaggerConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 
 
