@@ -51,4 +51,10 @@ public class PhoneService {
                 .collect(Collectors.toList());
         phoneDao.saveAll(phoneList);
     }
+
+    public PhoneDto updatePhone(PhoneDto phoneDto) {
+        Phone phoneById = phoneDao.getById(phoneDto.getId());
+        phoneMapper.updatePhoneFromDto(phoneDto,phoneById);
+        return phoneMapper.toDto(phoneDao.save(phoneById));
+    }
 }
